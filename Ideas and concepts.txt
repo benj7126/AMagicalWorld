@@ -1,0 +1,77 @@
+﻿Disassembler - takes a magic and gives a random of its atribute
+Assembler - takes atributes to make magic
+
+Magic:
+	Magic has x atributes (Depending on the assebler tier, like anvils, but more important)
+	Each needs to have certain atribute types, and x "may haves" where x is based on assembler ^^
+
+Atribute ideas:
+	Atribute will be catagorized into tiers
+
+	Over time you will get generally better atributes (later game)
+	Needed for decreasing mana cost for early spells but also decreasing damage... (and also just worse atributes)
+
+	fx bosses alost drop atributes not only weapons (and probly some other ways to get them)
+	
+	Needed attribute types:
+		Cast:
+			The point with which the magic is cast from
+			The base casting speed
+
+		Form:
+			The form
+			Base speed
+			Base damage
+			Base duration
+
+			Also collision, so the form decides fx, if it breaks on hitting tiles (for now...)
+
+		Behaviour:
+			Could be go straight
+			Could be home, short range home, to cursor (like the magic wand),
+			gravity, anti gravity, Chaotic path (randomly rotates),
+			spiraling (out from spawn position), orbiting (spawn position),
+
+			rotate enemy (when it spawns, it tagets near enemy and rotates around it)
+
+		Trail:
+			The trail... (just particles i think)
+			Just like other atributes, the "may haves" except they have visual impact and are neccecary...
+
+		"Element":
+			Idk, there needs to be some way to decide basse color...
+
+		
+	Other attribute types:
+		Pre cast:
+			2x cast, 3x cast, 4x cast and so on (divide damage by something and just cast duplicates...)
+
+		Status effect:
+			Status effect to apply when hitting mob or player
+
+		Hit tile:
+			some ai to run when hitting a tile
+			fx bounce, split (high cost, or a lot less damage)
+		
+		Time based:
+			After x do y
+			fx after 3 seconds, die... (mana cost down, maby speed up, or just damage)
+			or after 2 sec split into 5 of this that shoot randomly
+
+		Multiplers:
+			Damage
+			Mana cost
+			Cast speed
+			Delay (?)
+			Effect Range (?) - some might need it... idk...
+
+			this could end in fx "Cost Down T1 \n [0.2x Damage] \n [0.4x Mana Cost]",
+			"Clumsy Cast T1 \n [1.2x Cast Speed] \n [1.8x Mana Const]" or simply "Damage T1 [1.1x Damage]"
+
+		Const Application:
+			maby something like "Pull near enemies" or "Damage near enemies" 0.05x Damage to near enemies
+
+
+Reactions (maby, could be future plans)
+	Just a set of debuffs that do things when you add them together...
+	think genshin...

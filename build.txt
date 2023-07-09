@@ -1,0 +1,3 @@
+displayName = A Magical World
+author = catNull
+version = 0.1

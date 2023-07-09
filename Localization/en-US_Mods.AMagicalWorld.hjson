@@ -1,0 +1,9 @@
+"Keybinds.Transform to next form.DisplayName": Transform to next form
+Projectiles.projSpell.DisplayName: proj Spell
+
+Items: {
+	Scroll: {
+		DisplayName: Scroll
+		Tooltip: ""
+	}
+}
