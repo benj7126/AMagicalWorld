@@ -23,9 +23,8 @@ namespace AMagicalWorld.ComplexMagic.Trails
             AColor TargetColor = Attribute.Get(spell.Attributes.Color) as AColor;
             for (int i = 0; i < 2; i++)
             {
-                int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<GlimmerDust>(), 0 ,0, 0, TargetColor.SubColor(spell), 1.2f);
-
-                Main.dust[dust].velocity = projectile.velocity * 0.3f;
+                Color c = TargetColor.SubColor(spell);
+                int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<GlimmerDust>(), projectile.velocity.X, projectile.velocity.Y, 0, c, 1.2f);
             }
         }
     }

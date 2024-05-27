@@ -13,13 +13,14 @@ namespace AMagicalWorld.ComplexMagic
     {
         public static Attribute[] Attributes =
         {
-            new Others.Error(), // 0 is fallback
+            new Others.OnFire(), // 0 is fallback
 
             new Behaviours.Forward(),
             new Casts.PlayerCenter(),
             new Forms.Bolt(),
             new Trails.Glimmer(),
 
+            // 5 - 11 | gem staffs
             new Colors.AmethystColor(),
             new Colors.TopazColor(),
             new Colors.SapphireColor(),
@@ -27,6 +28,15 @@ namespace AMagicalWorld.ComplexMagic
             new Colors.RubyColor(),
             new Colors.AmberColor(),
             new Colors.DiamondColor(),
+
+            // 12 - x | wand of ...
+            new Behaviours.Falling(),
+            new Trails.Sparking(),
+            new Colors.FireColor(),
+            new Colors.ColdFireColor(),
+            new Others.Debuffs.OnFire(),
+            new Others.Debuffs.Frostburn(),
+
         };
 
         public static Attribute Get(int AttributeIDX)
@@ -48,7 +58,7 @@ namespace AMagicalWorld.ComplexMagic
         public virtual string Description => "";
         public abstract AttributeTypes AttributeType { get; }
 
-        public virtual Dictionary<Modifiers, modifier> AModifiers => new Dictionary<Modifiers, modifier>();
+        public virtual Dictionary<Modifiers, Modifier> AModifiers => new Dictionary<Modifiers, Modifier>();
     }
 
     public abstract class AForm : Attribute
@@ -68,6 +78,7 @@ namespace AMagicalWorld.ComplexMagic
     {
         public override AttributeTypes AttributeType => AttributeTypes.Behaviour;
 
+        public virtual void PostSetup(projSpell spell) { }
         public abstract bool Update(projSpell spell);
 
     }
@@ -75,7 +86,8 @@ namespace AMagicalWorld.ComplexMagic
     {
         public override AttributeTypes AttributeType => AttributeTypes.Trail;
 
-        public abstract void TrailAI(projSpell spell);
+        public virtual void TrailAI(projSpell spell) { }
+        public virtual void DrawTrail(projSpell spell, ref Color color) { }
 
     }
     public abstract class AColor : Attribute
@@ -83,7 +95,7 @@ namespace AMagicalWorld.ComplexMagic
         public override AttributeTypes AttributeType => AttributeTypes.Color;
 
         public abstract Color MainColor(projSpell spell);
-        public abstract Color SubColor(projSpell spell);
+        public virtual Color SubColor(projSpell spell) { return MainColor(spell); }
     }
     public abstract class APreCast : Attribute
     {
@@ -92,6 +104,7 @@ namespace AMagicalWorld.ComplexMagic
     }
     public abstract class AStatusEffect : Attribute
     {
+        public abstract void ApplyStatusEffect(NPC npc, projSpell spell);
         public override AttributeTypes AttributeType => AttributeTypes.StatusEffect;
 
     }

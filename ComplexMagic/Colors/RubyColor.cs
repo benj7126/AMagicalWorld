@@ -10,21 +10,17 @@ namespace AMagicalWorld.ComplexMagic.Colors
 {
     public class RubyColor : AColor
     {
-        public override string Name => "Ruby Color";
+        public override string Name => "Ruby";
         public override string Description => "The color attribute of Ruby";
 
         public override Color MainColor(projSpell spell)
         {
-            return new Color(0.9f, 0.6f, 0.6f); //Ruby
+            return new Color(1f, 0.1f, 0.1f, 0f); //Ruby
         }
 
-        public override Color SubColor(projSpell spell)
-        {
-            return MainColor(spell);
-        }
-
-        public override Dictionary<Modifiers, modifier> AModifiers => new Dictionary<Modifiers, modifier> {
-            { Modifiers.ProjSpeed, new modifier(2.2f, false) }
+        public override Dictionary<Modifiers, Modifier> AModifiers => new Dictionary<Modifiers, Modifier> {
+            { Modifiers.ProjSpeed, new Modifier(2.2f, ModifierApplication.Multiply) },
+            { Modifiers.Damage, new Modifier(2.1f, ModifierApplication.Multiply) }
         };
     }
 }

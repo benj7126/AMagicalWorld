@@ -10,27 +10,17 @@ namespace AMagicalWorld.ComplexMagic.Colors
 {
     public class DiamondColor : AColor
     {
-        public override string Name => "Diamond Color";
+        public override string Name => "Diamond";
         public override string Description => "The color attribute of Diamond";
 
         public override Color MainColor(projSpell spell)
         {
-
-            //return new Color(1f, 0.7f, 1f); //Amethyst
-            //return new Color(1f, 0.9f, 0.6f); //Topaz
-            //return new Color(0.4f, 0.7f, 1f); //Sapphire
-            //return new Color(1f, 0.75f, 0.1f); //Amber
-            //return new Color(0.9f, 0.6f, 0.6f); //Ruby
-            return new Color(0.95f, 0.95f, 1f); //Diamond
+            return new Color(0.9f, 0.9f, 0.9f, 0f); //Diamond
         }
 
-        public override Color SubColor(projSpell spell)
-        {
-            return MainColor(spell);
-        }
-
-        public override Dictionary<Modifiers, modifier> AModifiers => new Dictionary<Modifiers, modifier> {
-            { Modifiers.ProjSpeed, new modifier(2.35f, false) }
+        public override Dictionary<Modifiers, Modifier> AModifiers => new Dictionary<Modifiers, Modifier> {
+            { Modifiers.ProjSpeed, new Modifier(2.35f, ModifierApplication.Multiply) },
+            { Modifiers.Damage, new Modifier(2.3f, ModifierApplication.Multiply) }
         };
     }
 }

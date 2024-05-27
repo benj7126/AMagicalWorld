@@ -13,7 +13,7 @@ namespace AMagicalWorld
 
         public override void PreUpdate()
         {
-            if (Keybindings.Cast.JustPressed)
+            if (Keybindings.Cast.JustPressed) // cast and scroll equipped book? or maby just scroll and let cast be click...
             {
                 Spell testSpell = new Spell(new AttributeSet(2, 3, 1, 4, 5, new List<int> { }));
                 Spell.CastSpell(Player, testSpell);

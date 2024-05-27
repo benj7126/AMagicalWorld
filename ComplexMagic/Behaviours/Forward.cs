@@ -18,5 +18,8 @@ namespace AMagicalWorld.ComplexMagic.Behaviours
 
             return true;
         }
+        public override Dictionary<Modifiers, Modifier> AModifiers => new Dictionary<Modifiers, Modifier> {
+            { Modifiers.ProjSpeed, new Modifier(4f, ModifierApplication.Add) },
+        };
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AMagicalWorld.ComplexMagic.Others
 {
-    public class Error : AOther
+    public class OnFire : AOther
     {
         public override string Name => "Error";
-        public override string Description => "If you have this...\nThen you somehow fucked something up, gj";
+        public override string Description => "If you have this...\nThen you somehow fucked something up, gj...\n[probably cheated]";
     }
 }

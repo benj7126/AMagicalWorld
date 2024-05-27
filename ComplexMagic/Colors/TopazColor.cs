@@ -10,21 +10,17 @@ namespace AMagicalWorld.ComplexMagic.Colors
 {
     public class TopazColor : AColor
     {
-        public override string Name => "Topaz Color";
+        public override string Name => "Topaz";
         public override string Description => "The color attribute of Topaz";
 
         public override Color MainColor(projSpell spell)
         {
-            return new Color(1f, 0.9f, 0.6f); //Topaz
+            return new Color(1f, 0.6f, 0.1f, 0f); //Topaz
         }
 
-        public override Color SubColor(projSpell spell)
-        {
-            return MainColor(spell);
-        }
-
-        public override Dictionary<Modifiers, modifier> AModifiers => new Dictionary<Modifiers, modifier> {
-            { Modifiers.ProjSpeed, new modifier(1.6f, false) }
+        public override Dictionary<Modifiers, Modifier> AModifiers => new Dictionary<Modifiers, Modifier> {
+            { Modifiers.ProjSpeed, new Modifier(1.6f, ModifierApplication.Multiply) },
+            { Modifiers.Damage, new Modifier(1.6f, ModifierApplication.Multiply) }
         };
     }
 }

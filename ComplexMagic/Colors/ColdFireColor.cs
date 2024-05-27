@@ -8,20 +8,18 @@ using Terraria;
 
 namespace AMagicalWorld.ComplexMagic.Colors
 {
-    public class AmethystColor : AColor
+    public class ColdFireColor : AColor
     {
-        public override string Name => "Amethyst";
-        public override string Description => "The color attribute of Amethyst";
+        public override string Name => "Cold fire";
+        public override string Description => "The color attribute of Cold fire";
 
         public override Color MainColor(projSpell spell)
         {
-
-            return new Color(1f, 0.1f, 1f, 0f); //Amethyst
+            return new Color(0.125f, 0.81f, 0.77f, 0f);
         }
 
         public override Dictionary<Modifiers, Modifier> AModifiers => new Dictionary<Modifiers, Modifier> {
-            { Modifiers.ProjSpeed, new Modifier(1.45f, ModifierApplication.Multiply) },
-            { Modifiers.Damage, new Modifier(1.5f, ModifierApplication.Multiply) }
+            { Modifiers.Damage, new Modifier(1f, ModifierApplication.Multiply) }
         };
     }
 }

@@ -6,4 +6,9 @@ Items: {
 		DisplayName: Scroll
 		Tooltip: ""
 	}
+
+	BeginnerMagicBook: {
+		DisplayName: Beginner Magic Book
+		Tooltip: ""
+	}
 }

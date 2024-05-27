@@ -15,7 +15,7 @@ namespace AMagicalWorld.ComplexMagic.Casts
 
         public override Vector2 Position(Player player)
         {
-            return player.Center;
+            return player.Center + new Vector2(0, -100);
         }
 
         public override Vector2 Direction(Player player)
